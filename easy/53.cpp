@@ -7,6 +7,10 @@
 #include <algorithm>
 using namespace std;
 
+/* 
+  We use Kadane's Algorithm 
+  so that we can compute the result in O(n) time
+*/
 class Solution {
   public:
     int maxSubArray(vector<int>& nums) {
