@@ -6,6 +6,8 @@
 
 using namespace std;
 
+// Solution 1. Math.combinations(m+n, m)
+// Solution 2. Dynamic Promgramming Solution
 class Solution {
 public:
   int uniquePaths(int m, int n) {
