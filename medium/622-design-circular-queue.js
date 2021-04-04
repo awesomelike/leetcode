@@ -17,12 +17,9 @@ MyCircularQueue.prototype.enQueue = function(value) {
   }
 
   if (this.front === -1) {
-    this.rear = 0;
-    this.front = 0;
-  } else if (this.rear === this.size - 1) {
-    this.rear = 0;
+    this.rear = this.front = 0;
   } else {
-    this.rear += 1;
+    this.rear = (this.rear + 1) % this.size; 
   }
   this.elements[this.rear] = value;
   return true;
@@ -39,10 +36,8 @@ MyCircularQueue.prototype.deQueue = function() {
   delete this.elements[this.front];
   if (this.front === this.rear) {
     this.front = this.rear = -1;
-  } else if (this.front === this.size - 1) {
-    this.front = 0;
   } else {
-    this.front++;
+    this.front = (this.front + 1) % this.size;
   }
   return true;
 };
