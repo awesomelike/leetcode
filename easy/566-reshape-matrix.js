@@ -31,3 +31,18 @@
   
   return ans;
 };
+
+const matrixReshape2 = (nums, r, c) => {
+  const m = nums.length;
+  const n = nums[0].length;
+
+  if (m * n < r * c) {
+    return nums;
+  }
+
+  const answer = [];
+  for (let i = 0; i < r * c; i++) {
+    answer[i/c][i%c] = nums[i/n][i%n];
+  }
+  return answer;
+};
