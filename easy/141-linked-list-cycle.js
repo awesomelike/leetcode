@@ -15,7 +15,7 @@
   while (t !== null) {
     t.visited = t.visited || 0;
     t.visited++;
-    if (t.visited > 1 && t.next) {
+    if (t.visited > 1) {
       return true;
     }
     t = t.next;
